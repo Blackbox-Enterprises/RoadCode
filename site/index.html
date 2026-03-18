@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Blackbox-Enterprises RoadCode</title>
+    <style>
+      :root {
+        --bg: #0f1419;
+        --panel: #141d24;
+        --ink: #f3f7fb;
+        --muted: #8ea4b8;
+        --accent: #5fd1a5;
+        --line: rgba(255,255,255,0.08);
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
+        background:
+          radial-gradient(circle at top, rgba(95,209,165,0.22), transparent 30%),
+          linear-gradient(180deg, #0b1116 0%, #101921 100%);
+        color: var(--ink);
+      }
+      main {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 72px 24px;
+      }
+      .eyebrow {
+        display: inline-block;
+        padding: 6px 12px;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        color: var(--accent);
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        font-size: 12px;
+      }
+      h1 {
+        margin: 18px 0 12px;
+        font-size: clamp(42px, 9vw, 88px);
+        line-height: 0.95;
+      }
+      p {
+        max-width: 640px;
+        color: var(--muted);
+        font-size: 18px;
+        line-height: 1.6;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 16px;
+        margin-top: 40px;
+      }
+      .card {
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        padding: 20px;
+        background: rgba(20, 29, 36, 0.84);
+      }
+      .card h2 {
+        margin: 0 0 10px;
+        font-size: 18px;
+      }
+      .card code {
+        color: var(--accent);
+        font-family: "IBM Plex Mono", "SFMono-Regular", monospace;
+      }
+      a {
+        color: var(--ink);
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <span class="eyebrow">Blackbox-Enterprises</span>
+      <h1>RoadCode</h1>
+      <p>
+        Operator landing page for Blackbox-Enterprises. This repo is the shared control surface for automation,
+        deployment, and repo tooling across GitHub, Gitea, Slack, and Cloudflare.
+      </p>
+      <div class="grid">
+        <section class="card">
+          <h2>Cloudflare Pages</h2>
+          <p>Project: <code>blackbox-enterprises-roadcode</code></p>
+          <p>URL: <a href="https://blackbox-enterprises-roadcode.pages.dev">https://blackbox-enterprises-roadcode.pages.dev</a></p>
+        </section>
+        <section class="card">
+          <h2>Default Branch</h2>
+          <p><code>main</code></p>
+        </section>
+        <section class="card">
+          <h2>GitHub Repo</h2>
+          <p><a href="https://github.com/Blackbox-Enterprises/RoadCode">https://github.com/Blackbox-Enterprises/RoadCode</a></p>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>

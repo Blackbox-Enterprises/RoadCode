@@ -1,0 +1,42 @@
+name: RoadCode Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: roadcode-pages-blackbox-enterprises
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: self-hosted
+    permissions:
+      contents: read
+    env:
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      PROJECT_NAME: blackbox-enterprises-roadcode
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Ensure Pages Project Exists
+        shell: bash
+        run: |
+          set -euo pipefail
+          LOG_FILE="$(mktemp)"
+          if wrangler pages project create "$PROJECT_NAME" --production-branch main >"$LOG_FILE" 2>&1; then
+            cat "$LOG_FILE"
+          elif grep -qi "already exists" "$LOG_FILE"; then
+            cat "$LOG_FILE"
+          else
+            cat "$LOG_FILE"
+            exit 1
+          fi
+
+      - name: Deploy Static Site
+        shell: bash
+        run: |
+          set -euo pipefail
+          wrangler pages deploy site --project-name "$PROJECT_NAME" --commit-dirty=true
