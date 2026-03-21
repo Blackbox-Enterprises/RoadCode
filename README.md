@@ -1,34 +1,49 @@
-# Blackbox-Enterprises RoadCode
+# Blackbox-Enterprises — RoadCode
 
-Canonical RoadCode workspace and automation hub for Blackbox-Enterprises.
+> Automation division of [BlackRoad OS, Inc.](https://github.com/BlackRoad-OS-Inc)
 
-## What Lives Here
+n8n, Huginn, Temporal, Prefect, ActivePieces. Workflow automation at scale.
 
-- RoadCode landing page and deploy surface
-- org-specific operator workflows
-- automation entrypoints for GitHub, Gitea, Slack, and Cloudflare
+## Connection to BlackRoad-OS-Inc
 
-## Deploy
+```
+BlackRoad-OS-Inc (Parent — Data Layer)
+  └── Blackbox-Enterprises (Automation)
+      └── RoadCode (this repo — workspace + automation)
+```
 
-This repo ships a static site from site/ to both GitHub Pages and Cloudflare Pages.
+- **Parent Org**: [BlackRoad-OS-Inc](https://github.com/BlackRoad-OS-Inc)
+- **Master RoadCode**: [BlackRoad-OS-Inc/RoadCode](https://github.com/BlackRoad-OS-Inc/RoadCode)
+- **Operator**: [BlackRoad-OS-Inc/blackroad-operator](https://github.com/BlackRoad-OS-Inc/blackroad-operator)
+- **Domain**: [blackboxprogramming.io](https://blackboxprogramming.io)
+- **Repos in this org**: 12
 
-- GitHub Pages URL: https://blackbox-enterprises.github.io/RoadCode/
-- Cloudflare Pages URL: https://blackbox-enterprises-roadcode.pages.dev
-- Expected Cloudflare project name: blackbox-enterprises-roadcode
+## Role
 
-## Operator Notes
+| Property | Value |
+|----------|-------|
+| **Division** | Automation |
+| **Parent** | BlackRoad-OS-Inc |
+| **Governance** | [Cece Protocol](https://github.com/BlackRoad-OS-Inc/RoadCode/blob/main/ORG-MAP.md) |
+| **License** | Proprietary — BlackRoad OS, Inc. |
 
-- Default branch: main
-- GitHub Pages workflow: .github/workflows/github-pages.yml
-- Workflow: .github/workflows/roadcode-pages.yml
-- Site entrypoint: site/index.html
+## RoadCode Standard
+
+Every BlackRoad org follows the RoadCode standard:
+- `RoadCode/` repo = workspace + automation hub
+- `.github/` repo = org profile + shared workflows
+- `operator/` repo = CLI tools + bootstrap scripts
+- `source/` repo = canonical source tree
+
+All orgs report to **BlackRoad-OS-Inc** as the central coordination layer.
+
+## Quick Links
+
+- [Master ORG-MAP](https://github.com/BlackRoad-OS-Inc/RoadCode/blob/main/ORG-MAP.md)
+- [Master TODO](https://github.com/BlackRoad-OS-Inc/RoadCode/blob/main/TODO.md)
+- [Master ROADMAP](https://github.com/BlackRoad-OS-Inc/RoadCode/blob/main/ROADMAP.md)
+- [All Domain Repos](https://github.com/orgs/BlackRoad-OS-Inc/repositories)
 
 ---
 
 **Proprietary Software — BlackRoad OS, Inc.**
-
-This software is proprietary to BlackRoad OS, Inc. Source code is publicly visible for transparency and collaboration. Commercial use, forking, and redistribution are prohibited without written authorization.
-
-**BlackRoad OS — Pave Tomorrow.**
-
-*Copyright 2024-2026 BlackRoad OS, Inc. All Rights Reserved.*
