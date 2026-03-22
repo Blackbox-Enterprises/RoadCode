@@ -1,0 +1,69 @@
+# BlackRoad Pi Fleet Configuration
+fleet:
+  - name: alice
+    ip: 192.168.4.49
+    wireguard: 10.8.0.1
+    role: gateway
+    services: [nginx, pihole, postgresql, qdrant, redis]
+    hardware:
+      model: Raspberry Pi 4B
+      ram: 8GB
+      storage: 128GB SSD
+      accelerator: none
+
+  - name: cecilia
+    ip: 192.168.4.96
+    wireguard: 10.8.0.2
+    role: inference
+    services: [ollama, minio, postgresql, influxdb]
+    hardware:
+      model: Raspberry Pi 4B
+      ram: 8GB
+      storage: 256GB SSD
+      accelerator: Hailo-8 (26 TOPS)
+
+  - name: octavia
+    ip: 192.168.4.101
+    wireguard: 10.8.0.3
+    role: platform
+    services: [gitea, docker, nats, workerd]
+    hardware:
+      model: Raspberry Pi 4B
+      ram: 8GB
+      storage: 128GB SSD
+      accelerator: Hailo-8 (26 TOPS)
+
+  - name: aria
+    ip: 192.168.4.98
+    wireguard: 10.8.0.4
+    role: edge
+    services: [headscale, cloudflared, nginx, influxdb]
+    hardware:
+      model: Raspberry Pi 4B
+      ram: 4GB
+      storage: 64GB SD
+
+  - name: lucidia
+    ip: 192.168.4.38
+    wireguard: 10.8.0.5
+    role: dns-apps
+    services: [powerdns, nginx, ollama, github-runners]
+    hardware:
+      model: Raspberry Pi 4B
+      ram: 8GB
+      storage: 128GB SSD
+      accelerator: none
+
+  - name: gematria
+    type: droplet
+    ip: nyc3
+    wireguard: 10.8.0.6
+    role: tls-edge
+    services: [caddy, ollama, powerdns]
+
+  - name: anastasia
+    type: droplet
+    ip: nyc1
+    wireguard: 10.8.0.7
+    role: compute
+    services: [docker, compute-worker]

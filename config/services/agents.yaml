@@ -1,0 +1,63 @@
+agents:
+  cece:
+    role: executive-assistant
+    group: leadership
+    tier: 3
+    model: claude-sonnet-4-20250514
+    node: cecilia
+
+  lucidia:
+    role: researcher
+    group: intelligence
+    tier: 3
+    model: lucidia:latest
+    node: lucidia
+
+  operator:
+    role: fleet-manager
+    group: infrastructure
+    tier: 2
+    model: llama3.2:3b
+    node: alice
+
+  alice:
+    role: gateway
+    group: infrastructure
+    tier: 1
+    node: alice
+
+  cecilia:
+    role: inference
+    group: compute
+    tier: 1
+    node: cecilia
+
+  octavia:
+    role: platform
+    group: services
+    tier: 1
+    node: octavia
+
+  aria:
+    role: edge
+    group: networking
+    tier: 1
+    node: aria
+
+  gematria:
+    role: tls-edge
+    group: networking
+    tier: 1
+    node: gematria
+
+  anastasia:
+    role: compute
+    group: compute
+    tier: 1
+    node: anastasia
+
+  alexandria:
+    role: dev-workstation
+    group: development
+    tier: 2
+    node: mac

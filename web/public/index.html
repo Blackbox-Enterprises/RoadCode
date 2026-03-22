@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RoadCode — BlackRoad OS</title>
+  <style>
+    :root {
+      --bg: #0a0a0a; --fg: #f5f5f5; --accent: #FF1D6C;
+      --gradient: linear-gradient(90deg, #FF6B2B, #FF2255, #CC00AA, #8844FF, #4488FF, #00D4FF);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background: var(--bg); color: var(--fg); font-family: 'Inter', system-ui, sans-serif; }
+    .gradient-bar { height: 4px; background: var(--gradient); }
+    .hero { max-width: 800px; margin: 0 auto; padding: 80px 20px; text-align: center; }
+    h1 { font-size: 3rem; font-family: 'Space Grotesk', monospace; margin-bottom: 1rem; }
+    .tagline { color: #999; font-size: 1.2rem; margin-bottom: 2rem; }
+    .cta { display: inline-block; padding: 12px 32px; background: var(--accent); color: white;
+           text-decoration: none; border-radius: 6px; font-weight: 600; }
+    .cta:hover { opacity: 0.9; }
+    footer { text-align: center; padding: 40px; color: #666; font-size: 0.85rem; }
+  </style>
+</head>
+<body>
+  <div class="gradient-bar"></div>
+  <div class="hero">
+    <h1>RoadCode</h1>
+    <p class="tagline">Sovereign development workspace. Every org, one codebase.</p>
+    <a href="https://blackroad.io" class="cta">Get Started</a>
+  </div>
+  <footer>&copy; 2025 BlackRoad OS, Inc. — Remember the Road. Pave Tomorrow.</footer>
+</body>
+</html>

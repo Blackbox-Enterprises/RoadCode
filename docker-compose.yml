@@ -1,0 +1,28 @@
+version: '3.8'
+services:
+  api:
+    build: .
+    ports: ["8000:8000"]
+    environment:
+      - NODE_ENV=production
+      - DATABASE_URL=sqlite:///data/roadcode.db
+    volumes:
+      - ./data:/app/data
+    restart: unless-stopped
+
+  worker:
+    build: .
+    command: python -m services.worker.main
+    environment:
+      - QUEUE_URL=redis://redis:6379
+    depends_on: [redis]
+    restart: unless-stopped
+
+  redis:
+    image: redis:7-alpine
+    ports: ["6379:6379"]
+    volumes:
+      - redis-data:/data
+
+volumes:
+  redis-data:

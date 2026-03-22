@@ -1,0 +1,17 @@
+{
+  "name": "@blackbox-enterprises/roadcode",
+  "version": "1.0.0",
+  "description": "RoadCode workspace for Blackbox-Enterprises — Enterprise Solutions",
+  "private": true,
+  "workspaces": ["agents/*", "services/*", "web/*", "cli/*"],
+  "scripts": {
+    "dev": "node scripts/dev.js",
+    "build": "node scripts/build.js",
+    "test": "node scripts/test.js",
+    "lint": "eslint . --ext .js,.ts,.jsx,.tsx",
+    "deploy": "bash scripts/deploy/deploy.sh"
+  },
+  "engines": { "node": ">=18.0.0" },
+  "author": "BlackRoad OS, Inc. <alexa@blackroad.io>",
+  "license": "SEE LICENSE IN LICENSE"
+}
