@@ -1,0 +1,35 @@
+# Security policies
+rate_limiting:
+  default: 100/minute
+  api: 60/minute
+  auth: 10/minute
+  search: 30/minute
+
+cors:
+  allowed_origins:
+    - "https://blackroad.io"
+    - "https://*.blackroad.io"
+    - "https://blackroadai.com"
+    - "https://lucidia.earth"
+  allowed_methods: [GET, POST, PUT, DELETE, OPTIONS]
+  allowed_headers: [Content-Type, Authorization, X-Agent-ID]
+  max_age: 86400
+
+csp:
+  default-src: "'self'"
+  script-src: "'self' 'unsafe-inline'"
+  style-src: "'self' 'unsafe-inline' https://fonts.googleapis.com"
+  font-src: "'self' https://fonts.gstatic.com"
+  img-src: "'self' https://images.blackroad.io data:"
+  connect-src: "'self' https://*.blackroad.io wss://*.blackroad.io"
+
+headers:
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(self), geolocation=()
+
+tls:
+  min_version: "1.2"
+  hsts: true
+  hsts_max_age: 31536000

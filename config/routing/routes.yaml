@@ -1,0 +1,90 @@
+# BlackRoad domain routing configuration
+routes:
+  # Root domains
+  - domain: blackroad.io
+    backend: gateway
+    target: 192.168.4.49:80
+    features: [ssl, cache, compress]
+
+  - domain: blackroad.company
+    backend: pages
+    target: blackroad-company.pages.dev
+
+  - domain: blackroadai.com
+    backend: pages
+    target: blackroadai.pages.dev
+
+  - domain: blackroadinc.us
+    backend: pages
+    target: blackroadinc-us.pages.dev
+
+  # Product subdomains (blackroad.io)
+  - domain: chat.blackroad.io
+    backend: worker
+    target: chat-blackroad.workers.dev
+    service: roundtrip-chat
+
+  - domain: search.blackroad.io
+    backend: worker
+    target: road-search.workers.dev
+    service: road-search
+
+  - domain: pay.blackroad.io
+    backend: worker
+    target: pay-blackroad.workers.dev
+    service: stripe-payments
+
+  - domain: auth.blackroad.io
+    backend: worker
+    target: auth-blackroad.workers.dev
+    service: authentication
+
+  - domain: social.blackroad.io
+    backend: worker
+    target: backroad-social.workers.dev
+    service: backroad
+
+  - domain: api.blackroad.io
+    backend: gateway
+    target: 192.168.4.49:8000
+    features: [ssl, rate-limit, cors]
+
+  - domain: roundtrip.blackroad.io
+    backend: worker
+    target: roundtrip-blackroad.workers.dev
+
+  - domain: images.blackroad.io
+    backend: r2
+    bucket: blackroad-assets
+
+  - domain: hq.blackroad.io
+    backend: worker
+    target: hq-blackroad.workers.dev
+
+  # Lucidia domains
+  - domain: lucidia.earth
+    backend: pages
+    target: lucidia-earth.pages.dev
+
+  - domain: lucidia.studio
+    redirect: lucidia.earth
+
+  # Blockchain
+  - domain: roadchain.io
+    backend: pages
+    target: roadchain-io.pages.dev
+
+  - domain: roadcoin.io
+    backend: pages
+    target: roadcoin-io.pages.dev
+
+load_balancer:
+  strategy: least-connections
+  health_check_interval: 30
+  backends:
+    - name: alice
+      url: http://192.168.4.49
+      weight: 2
+    - name: gematria
+      url: http://67.205.0.0
+      weight: 3
