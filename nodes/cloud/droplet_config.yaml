@@ -1,0 +1,36 @@
+# DigitalOcean droplet configurations
+droplets:
+  gematria:
+    region: nyc3
+    size: s-2vcpu-4gb
+    image: ubuntu-22-04-x64
+    role: tls-edge
+    wireguard_ip: 10.8.0.6
+    services:
+      - caddy (151 domains, Let's Encrypt)
+      - ollama (6 models)
+      - powerdns (ns1.blackroad.io)
+    firewall:
+      inbound:
+        - port: 22 (SSH)
+        - port: 53 (DNS)
+        - port: 80 (HTTP)
+        - port: 443 (HTTPS)
+        - port: 11434 (Ollama, internal only)
+        - port: 51820 (WireGuard)
+
+  anastasia:
+    region: nyc1
+    size: s-2vcpu-4gb
+    image: ubuntu-22-04-x64
+    role: compute
+    wireguard_ip: 10.8.0.7
+    services:
+      - docker
+      - compute-worker
+    firewall:
+      inbound:
+        - port: 22 (SSH)
+        - port: 80 (HTTP)
+        - port: 443 (HTTPS)
+        - port: 51820 (WireGuard)
