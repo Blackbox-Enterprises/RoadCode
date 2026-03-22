@@ -1,49 +1,55 @@
 # Blackbox-Enterprises — RoadCode
 
-> Automation division of [BlackRoad OS, Inc.](https://github.com/BlackRoad-OS-Inc)
+> Developer Tools & Enterprise division of [BlackRoad OS, Inc.](https://github.com/BlackRoad-OS-Inc)
 
-n8n, Huginn, Temporal, Prefect, ActivePieces. Workflow automation at scale.
+Developer tools, IDE integrations, and enterprise-grade automation. Home of BlackBox IDE and the programming tools that power the BlackRoad development workflow.
 
-## Connection to BlackRoad-OS-Inc
+**Domain**: [blackboxprogramming.io](https://blackboxprogramming.io)
+
+## Products
+
+| Product | What It Does |
+|---------|-------------|
+| **BlackBox IDE** | Code editor with local AI completion — no cloud round-trips |
+| **Workflow Engine** | Task automation across the 7-node fleet (n8n-based) |
+| **Enterprise Integrations** | Connectors for CI/CD, monitoring, deployment pipelines |
+| **CLI Toolkit** | `br` command — unified interface to the entire BlackRoad stack |
+
+## Org Hierarchy
 
 ```
-BlackRoad-OS-Inc (Parent — Data Layer)
-  └── Blackbox-Enterprises (Automation)
-      └── RoadCode (this repo — workspace + automation)
+BlackRoad-OS-Inc (Parent — 254 repos, 67 agents, 7 nodes)
+  └── Blackbox-Enterprises (Developer Tools & Enterprise)
+      ├── RoadCode          ← this repo (workspace + automation)
+      ├── operator           ← CLI tools + enterprise scripts
+      └── source             ← BlackBox IDE + integrations
 ```
 
-- **Parent Org**: [BlackRoad-OS-Inc](https://github.com/BlackRoad-OS-Inc)
-- **Master RoadCode**: [BlackRoad-OS-Inc/RoadCode](https://github.com/BlackRoad-OS-Inc/RoadCode)
-- **Operator**: [BlackRoad-OS-Inc/blackroad-operator](https://github.com/BlackRoad-OS-Inc/blackroad-operator)
-- **Domain**: [blackboxprogramming.io](https://blackboxprogramming.io)
-- **Repos in this org**: 12
+## Repos in This Org
 
-## Role
+- [`RoadCode`](https://github.com/Blackbox-Enterprises/RoadCode) — Workspace hub (this repo)
+- [`operator`](https://github.com/Blackbox-Enterprises/operator) — CLI + automation
+- [`source`](https://github.com/Blackbox-Enterprises/source) — Source tree
 
-| Property | Value |
-|----------|-------|
-| **Division** | Automation |
-| **Parent** | BlackRoad-OS-Inc |
-| **Governance** | [Cece Protocol](https://github.com/BlackRoad-OS-Inc/RoadCode/blob/main/ORG-MAP.md) |
-| **License** | Proprietary — BlackRoad OS, Inc. |
+## Developer Experience
 
-## RoadCode Standard
+- **Local AI completion**: Ollama models on the fleet power code suggestions — no data leaves the device
+- **67 agents** available for code review, debugging, refactoring, and deployment
+- **Unified search**: `br search-all` queries 1,383 entries from 23 indexers
+- **Gitea primary**: 239 repos on Octavia, GitHub is the mirror
 
-Every BlackRoad org follows the RoadCode standard:
-- `RoadCode/` repo = workspace + automation hub
-- `.github/` repo = org profile + shared workflows
-- `operator/` repo = CLI tools + bootstrap scripts
-- `source/` repo = canonical source tree
+## How It Connects
 
-All orgs report to **BlackRoad-OS-Inc** as the central coordination layer.
+- **Parent**: [BlackRoad-OS-Inc](https://github.com/BlackRoad-OS-Inc) — central coordination
+- **AI**: [BlackRoad-AI](https://github.com/BlackRoad-AI) — models power IDE completion + code review
+- **Cloud**: [BlackRoad-Cloud](https://github.com/BlackRoad-Cloud) — deployment targets for enterprise workflows
+- **Security**: [BlackRoad-Security](https://github.com/BlackRoad-Security) — secret scanning + dependency audits
+- **Labs**: [BlackRoad-Labs](https://github.com/BlackRoad-Labs) — experimental dev tools tested before promotion
 
-## Quick Links
+## License
 
-- [Master ORG-MAP](https://github.com/BlackRoad-OS-Inc/RoadCode/blob/main/ORG-MAP.md)
-- [Master TODO](https://github.com/BlackRoad-OS-Inc/RoadCode/blob/main/TODO.md)
-- [Master ROADMAP](https://github.com/BlackRoad-OS-Inc/RoadCode/blob/main/ROADMAP.md)
-- [All Domain Repos](https://github.com/orgs/BlackRoad-OS-Inc/repositories)
+Proprietary — BlackRoad OS, Inc. See [LICENSE](./LICENSE).
 
 ---
 
-**Proprietary Software — BlackRoad OS, Inc.**
+*Remember the Road. Pave Tomorrow.*
